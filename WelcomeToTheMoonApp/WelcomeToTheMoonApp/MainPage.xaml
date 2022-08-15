@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="WelcomeToTheMoonApp.MainPage"
+             BackgroundColor="{StaticResource SecondColor}">
+
+    <StackLayout VerticalOptions="CenterAndExpand">
+        <Label HorizontalOptions="Center" TextColor="{StaticResource FirstColor}">
+            <Label.FormattedText>
+                <FormattedString>
+                    <FormattedString.Spans>
+                        <Span Text="Welcome" FontSize="72"/>
+                        <Span Text=" to the " FontSize="48" />
+                        <Span Text="Moon" FontSize="72"/>
+                    </FormattedString.Spans>
+                </FormattedString>
+            </Label.FormattedText>
+        </Label>
+        <Label HorizontalOptions="Center" Text="Deck helper" FontSize="42" FontAttributes="Italic" TextColor="#FFD052" />
+
+        <Button Text="Comenzar partida" HorizontalOptions="Center" Margin="40" Style="{StaticResource buttonStyle}" Clicked="StartButton_Clicked" />
+
+        <Label Text="v0.1" HorizontalOptions="Center" FontSize="20" FontAttributes="Italic" TextColor="#FFD052" />
+
+    </StackLayout>
+
+</ContentPage>

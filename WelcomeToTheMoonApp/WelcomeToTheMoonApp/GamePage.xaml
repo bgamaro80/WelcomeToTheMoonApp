@@ -1,0 +1,145 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="WelcomeToTheMoonApp.GamePage"
+             xmlns:local="clr-namespace:WelcomeToTheMoonApp.Converters"
+             BackgroundColor="{StaticResource SecondColor}">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <local:RoundToStringConverter x:Key="roundToStringConverter" />
+            <local:TupleCardNumberConveter x:Key="tupleCardNumberConveter" />
+            <local:TupleCardSymbolConveter x:Key="tupleCardSymbolConveter" />
+            <local:TupleNextCardSymbolConveter x:Key="tupleNextCardSymbolConveter" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+
+            <Label Grid.Row="0"
+                   Text="RONDA"
+                   FontSize="48"
+                   TextColor="{StaticResource FirstColor}"
+                   HorizontalOptions="Center"
+                   Margin="0,30,0,0"
+                   />
+            <Label Grid.Row="1"
+                   Text="{Binding Round, Converter={StaticResource roundToStringConverter}}"
+                   FontSize="72"
+                   TextColor="{StaticResource FirstColor}"
+                   HorizontalOptions="Center"
+                   TranslationY="-20"
+                   />
+
+            <Frame Grid.RowSpan="2"
+                   HorizontalOptions="End"
+                   VerticalOptions="Start"
+                   BackgroundColor="Transparent"
+                   
+                   >
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnTapped"/>
+                </Frame.GestureRecognizers>
+                <Label Text="&#xea0f;"
+                       FontSize="24"
+                       TextColor="{StaticResource FirstColor}"
+                       FontFamily="moonapp"    
+                       />
+            </Frame>
+
+            <Grid Grid.Row="2"
+                  Margin="30,0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <Frame Grid.Column="0"
+                       Style="{StaticResource cardFrameStyle}"
+                       HorizontalOptions="End">
+                    <Grid Padding="0">
+
+                        <Image Source="{Binding FirstCardInfo, Converter={StaticResource tupleCardNumberConveter}}"
+                               HorizontalOptions="Center" VerticalOptions="Start"
+                               WidthRequest="160" HeightRequest="160"
+                               Margin="0,0,0,0"
+                               Aspect="AspectFit" />
+                        <Image Source="{Binding FirstCardInfo, Converter={StaticResource tupleCardSymbolConveter}}" 
+                               HorizontalOptions="Center" VerticalOptions="End"
+                               WidthRequest="160" HeightRequest="160" 
+                               Margin="0,0,0,0"
+                               Aspect="AspectFit" />
+                        <Image Source="{Binding FirstCardInfo, Converter={StaticResource tupleNextCardSymbolConveter}}" 
+                               HorizontalOptions="End" VerticalOptions="Start" 
+                               WidthRequest="40" HeightRequest="40" 
+                               Aspect="AspectFit" />
+                    </Grid>
+                </Frame>
+
+                <Frame Grid.Column="1"
+                       Style="{StaticResource cardFrameStyle}"
+                       HorizontalOptions="Center">
+                    <Grid Padding="0">
+
+                        <Image Source="{Binding SecondCardInfo, Converter={StaticResource tupleCardNumberConveter}}"
+                               HorizontalOptions="Center" VerticalOptions="Start"
+                               WidthRequest="160" HeightRequest="160"
+                               Margin="0,0,0,0"
+                               Aspect="AspectFit" />
+                        <Image Source="{Binding SecondCardInfo, Converter={StaticResource tupleCardSymbolConveter}}" 
+                               HorizontalOptions="Center" VerticalOptions="End"
+                               WidthRequest="160" HeightRequest="160" 
+                               Margin="0,0,0,0"
+                               Aspect="AspectFit" />
+                        <Image Source="{Binding SecondCardInfo, Converter={StaticResource tupleNextCardSymbolConveter}}" 
+                               HorizontalOptions="End" VerticalOptions="Start" 
+                               WidthRequest="40" HeightRequest="40" 
+                               Aspect="AspectFit" />
+                    </Grid>
+                </Frame>
+
+                <Frame Grid.Column="2"
+                       Style="{StaticResource cardFrameStyle}"
+                       HorizontalOptions="Start">
+                    <Grid Padding="0">
+
+                        <Image Source="{Binding ThirdCardInfo, Converter={StaticResource tupleCardNumberConveter}}"
+                               HorizontalOptions="Center" VerticalOptions="Start"
+                               WidthRequest="160" HeightRequest="160"
+                               Margin="0,0,0,0"
+                               Aspect="AspectFit" />
+                        <Image Source="{Binding ThirdCardInfo, Converter={StaticResource tupleCardSymbolConveter}}" 
+                               HorizontalOptions="Center" VerticalOptions="End"
+                               WidthRequest="160" HeightRequest="160" 
+                               Margin="0,0,0,0"
+                               Aspect="AspectFit" />
+                        <Image Source="{Binding ThirdCardInfo, Converter={StaticResource tupleNextCardSymbolConveter}}" 
+                               HorizontalOptions="End" VerticalOptions="Start" 
+                               WidthRequest="40" HeightRequest="40" 
+                               Aspect="AspectFit" />
+                    </Grid>
+                </Frame>
+
+            </Grid>
+
+            <Button Grid.Row="3" 
+                    Text="Ronda anterior" 
+                    HorizontalOptions="Start" FontSize="36" Margin="48"
+                    Style="{StaticResource buttonStyle}"
+                    Clicked="PreviousRound_Click"/>
+
+            <Button Grid.Row="3" 
+                    Text="Ronda siguiente" 
+                    HorizontalOptions="End" FontSize="36" Margin="48"
+                    Style="{StaticResource buttonStyle}"
+                    Clicked="NextRound_Click"/>
+
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

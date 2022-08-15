@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="WelcomeToTheMoonApp.App">
+    <Application.Resources>
+
+        <ResourceDictionary>
+
+            <Color x:Key="FirstColor">#EFDEAF</Color>
+            <Color x:Key="SecondColor">#6F00BB</Color>
+
+
+            <Style x:Key="buttonStyle" TargetType="Button">
+                <Setter Property="BackgroundColor" Value="Transparent" />
+                <Setter Property="BorderColor" Value="{StaticResource FirstColor}" />
+                <Setter Property="BorderWidth" Value="2" />
+                <Setter Property="CornerRadius" Value="5" />
+                <Setter Property="TextColor" Value="{StaticResource FirstColor}" />
+            </Style>
+
+            <Style x:Key="cardFrameStyle" TargetType="Frame">
+                <Setter Property="BackgroundColor"  Value="{StaticResource FirstColor}" />
+                <Setter Property="HorizontalOptions" Value="Center" />
+                <Setter Property="VerticalOptions" Value="Center" />
+                <Setter Property="WidthRequest" Value="200" />
+                <Setter Property="HeightRequest" Value="320" />
+                <Setter Property="Padding" Value="5" />
+            </Style>
+
+            <Style x:Key="cardNumberStyle" TargetType="Label">
+                <Setter Property="FontSize" Value="72" />
+                <Setter Property="TextColor" Value="{StaticResource SecondColor}" />
+                <Setter Property="HorizontalOptions" Value="Center" />
+                <Setter Property="VerticalOptions" Value="Center" />
+            </Style>
+
+            <Style x:Key="cardSymbolStyle" TargetType="Label">
+                <Setter Property="FontSize" Value="72" />
+                <Setter Property="FontFamily" Value="moonapp" />
+                <Setter Property="TextColor" Value="{StaticResource SecondColor}" />
+                <Setter Property="HorizontalOptions" Value="Center" />
+                <Setter Property="VerticalOptions" Value="Center" />
+            </Style>
+
+        </ResourceDictionary>
+        
+    </Application.Resources>
+</Application>
