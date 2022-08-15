@@ -344,17 +344,17 @@ namespace WelcomeToTheMoonApp.Cards
                 {
                     ScenarioNumber = scenarioNumber,
                     Letter = "A",
-                    FirstScore = 9,
-                    SecondScore = 5,
-                    Text = "."
+                    FirstScore = 8,
+                    SecondScore = 3,
+                    Text = "Evacúa 2 zonas. Estas zonas pueden estar parcialmente o completamente infectadas."
                 },
                 new ObjectiveCard
                 {
                     ScenarioNumber = scenarioNumber,
                     Letter = "AA",
-                    FirstScore = 10,
-                    SecondScore = 5,
-                    Text = "."
+                    FirstScore = 8,
+                    SecondScore = 3,
+                    Text = "Evacúa todas las zonas de un nivel. Estas zonas pueden estar parciamente o completamente infectadas."
                 },
 
                 new ObjectiveCard
@@ -362,33 +362,33 @@ namespace WelcomeToTheMoonApp.Cards
                     ScenarioNumber = scenarioNumber,
                     Letter = "B",
                     FirstScore = 11,
-                    SecondScore = 6,
-                    Text = "."
+                    SecondScore = 4,
+                    Text = "Confina 3 zonas bloqueando todas las pasarelas que les den acceso. No basta con confinar un conjunto de 3 zonas: las 3 zonas deben estar completamente confinadas independientemente las unas de las otras."
                 },
                 new ObjectiveCard
                 {
                     ScenarioNumber = scenarioNumber,
                     Letter = "BB",
                     FirstScore = 12,
-                    SecondScore = 6,
-                    Text = "."
+                    SecondScore = 5,
+                    Text = "Confina la zona del virus verde y la zona del virus azul bloqueando todas las pasarelas que las conectan con otras zonas."
                 },
 
                 new ObjectiveCard
                 {
                     ScenarioNumber = scenarioNumber,
                     Letter = "C",
-                    FirstScore = 9,
-                    SecondScore = 5,
-                    Text = "."
+                    FirstScore = 10,
+                    SecondScore = 4,
+                    Text = "Rodea todas las energías de 2 niveles."
                 },
                 new ObjectiveCard
                 {
                     ScenarioNumber = scenarioNumber,
                     Letter = "CC",
-                    FirstScore = 11,
-                    SecondScore = 6,
-                    Text = "."
+                    FirstScore = 10,
+                    SecondScore = 4,
+                    Text = "Rodea todas plantas y todas las reservas de agua de 2 niveles."
                 }
             };
         }
@@ -403,51 +403,51 @@ namespace WelcomeToTheMoonApp.Cards
                 {
                     ScenarioNumber = scenarioNumber,
                     Letter = "A",
-                    FirstScore = 9,
+                    FirstScore = 10,
                     SecondScore = 5,
-                    Text = "."
+                    Text = "Numera 3 invernaderos con sus 3 plantas rodeadas."
                 },
                 new ObjectiveCard
                 {
                     ScenarioNumber = scenarioNumber,
                     Letter = "AA",
-                    FirstScore = 10,
-                    SecondScore = 5,
-                    Text = "."
+                    FirstScore = 7,
+                    SecondScore = 3,
+                    Text = "Numera el invernadero de la nave más elevada con sus tres plantas rodeadas."
                 },
 
                 new ObjectiveCard
                 {
                     ScenarioNumber = scenarioNumber,
                     Letter = "B",
-                    FirstScore = 11,
-                    SecondScore = 6,
-                    Text = "."
+                    FirstScore = 9,
+                    SecondScore = 4,
+                    Text = "Numera completamente 7 módulos."
                 },
                 new ObjectiveCard
                 {
                     ScenarioNumber = scenarioNumber,
                     Letter = "BB",
-                    FirstScore = 12,
-                    SecondScore = 6,
-                    Text = "."
+                    FirstScore = 10,
+                    SecondScore = 5,
+                    Text = "Numera completamente 3 naves."
                 },
 
                 new ObjectiveCard
                 {
                     ScenarioNumber = scenarioNumber,
                     Letter = "C",
-                    FirstScore = 9,
+                    FirstScore = 10,
                     SecondScore = 5,
-                    Text = "."
+                    Text = "Rodea todos los reactores de 3 naves."
                 },
                 new ObjectiveCard
                 {
                     ScenarioNumber = scenarioNumber,
                     Letter = "CC",
-                    FirstScore = 11,
-                    SecondScore = 6,
-                    Text = "."
+                    FirstScore = 10,
+                    SecondScore = 5,
+                    Text = "Rodea todas las reservas de agua de 3 naves."
                 }
             };
         }
@@ -462,51 +462,51 @@ namespace WelcomeToTheMoonApp.Cards
                 {
                     ScenarioNumber = scenarioNumber,
                     Letter = "A",
-                    FirstScore = 9,
+                    FirstScore = 12,
                     SecondScore = 5,
-                    Text = "."
+                    Text = "Controla 4 planetas en la misma hoja."
                 },
                 new ObjectiveCard
                 {
                     ScenarioNumber = scenarioNumber,
                     Letter = "AA",
-                    FirstScore = 10,
-                    SecondScore = 5,
-                    Text = "."
+                    FirstScore = 9,
+                    SecondScore = 4,
+                    Text = "Controla un planeta de cada tipo en la hoja."
                 },
 
                 new ObjectiveCard
                 {
                     ScenarioNumber = scenarioNumber,
                     Letter = "B",
-                    FirstScore = 11,
-                    SecondScore = 6,
-                    Text = "."
+                    FirstScore = 9,
+                    SecondScore = 5,
+                    Text = "Con los robots, dibuja tu insignia en 7 asteroides en la misma hoja."
                 },
                 new ObjectiveCard
                 {
                     ScenarioNumber = scenarioNumber,
                     Letter = "BB",
-                    FirstScore = 12,
+                    FirstScore = 11,
                     SecondScore = 6,
-                    Text = "."
+                    Text = "Mejora dos veces cada tipo de planeta en la misma hoja."
                 },
 
                 new ObjectiveCard
                 {
                     ScenarioNumber = scenarioNumber,
                     Letter = "C",
-                    FirstScore = 9,
-                    SecondScore = 5,
-                    Text = "."
+                    FirstScore = 10,
+                    SecondScore = 4,
+                    Text = "Tacha 6 casillas de puntuación para las plantas y 4 casillas de puntuación para el agua en una misma hoja."
                 },
                 new ObjectiveCard
                 {
                     ScenarioNumber = scenarioNumber,
                     Letter = "CC",
-                    FirstScore = 11,
+                    FirstScore = 10,
                     SecondScore = 6,
-                    Text = "."
+                    Text = "Con las acciones Planificación, dibuja tu insignia en 4 lunas diferentes en la misma hoja."
                 }
             };
         }
