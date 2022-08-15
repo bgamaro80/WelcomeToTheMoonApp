@@ -1,0 +1,136 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="WelcomeToTheMoonApp.Views.AstraGamePage"
+             BackgroundColor="{StaticResource SecondColor}">
+    <ContentPage.Content>
+
+        <Grid ColumnSpacing="0" RowSpacing="0">
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <!--Astra cards-->
+            <Grid Grid.Row="0"
+                  Grid.Column="0"
+                  ColumnSpacing="0" RowSpacing="0"
+                  HorizontalOptions="Center"
+                  HeightRequest="160"
+                  >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Image Source="astra1"
+                       Aspect="AspectFit"
+                       HorizontalOptions="Center"
+                       />
+                <Image Grid.Column="1"
+                       Source="astra2"
+                       Aspect="AspectFit"
+                       HorizontalOptions="Center"
+                       />
+            </Grid>
+            
+            <!--Objectives-->
+            <StackLayout Grid.Row="1"
+                         Grid.Column="0"
+                         Orientation="Horizontal"
+                         HorizontalOptions="Center"
+                         >
+                <Image Source="obj_1A_f"
+                       Aspect="AspectFit"
+                       WidthRequest="160" HeightRequest="200"
+                       HorizontalOptions="FillAndExpand"
+                       />
+                <Image Source="obj_1B_f"
+                       Aspect="AspectFit"
+                       WidthRequest="160" HeightRequest="200"
+                       HorizontalOptions="FillAndExpand"
+                       />
+                <Image Source="obj_1C_f"
+                       Aspect="AspectFit"
+                       WidthRequest="160" HeightRequest="200"
+                       HorizontalOptions="FillAndExpand"
+                       />
+            </StackLayout>
+
+            <!--Turn cards-->
+            <StackLayout Grid.Row="3"
+                         Grid.Column="0"
+                         Orientation="Horizontal"
+                         HorizontalOptions="Center"
+                         >
+                <Image Source="obj_1A_f"
+                       Aspect="AspectFit"
+                       WidthRequest="160" HeightRequest="200"
+                       HorizontalOptions="FillAndExpand"
+                       />
+                <Image Source="obj_1B_f"
+                       Aspect="AspectFit"
+                       WidthRequest="160" HeightRequest="200"
+                       HorizontalOptions="FillAndExpand"
+                       />
+                <Image Source="obj_1C_f"
+                       Aspect="AspectFit"
+                       WidthRequest="160" HeightRequest="200"
+                       HorizontalOptions="FillAndExpand"
+                       />
+            </StackLayout>
+            
+            
+            <!--Map-->
+            <AbsoluteLayout
+                Grid.Row="0"
+                Grid.RowSpan="5"
+                Grid.Column="1"
+                >
+                <Image 
+                   Source="aventure_1.jpg"
+                   Aspect="AspectFit"
+                   HorizontalOptions="End"
+                   VerticalOptions="Fill"
+                   />
+
+                <Label Text="X"
+                       FontSize="24"
+                       FontAttributes="Bold"
+                       TextColor="Black"
+                       HorizontalTextAlignment="Center"
+                       VerticalTextAlignment="Center"
+                       AbsoluteLayout.LayoutBounds="274,110,37,38"
+                       />
+                <Label Text="9"
+                       FontSize="24"
+                       FontAttributes="Bold"
+                       TextColor="Black"
+                       HorizontalTextAlignment="Center"
+                       VerticalTextAlignment="Center"
+                       AbsoluteLayout.LayoutBounds="311,110,37,38"
+                       />
+                <Label Text="15"
+                       FontSize="24"
+                       FontAttributes="Bold"
+                       TextColor="Black"
+                       HorizontalTextAlignment="Center"
+                       VerticalTextAlignment="Center"
+                       AbsoluteLayout.LayoutBounds="347,110,37,38"
+                       />
+
+            </AbsoluteLayout>
+
+            <Label Grid.Row="4"
+                   Text="Ronda 21" />
+
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

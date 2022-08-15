@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="WelcomeToTheMoonApp.MainPage"
+             x:Class="WelcomeToTheMoonApp.Views.MainPage"
              BackgroundColor="{StaticResource SecondColor}">
 
     <StackLayout VerticalOptions="CenterAndExpand">
@@ -20,7 +20,7 @@
 
         <Button Text="Comenzar partida" HorizontalOptions="Center" Margin="40" Style="{StaticResource buttonStyle}" Clicked="StartButton_Clicked" />
 
-        <Label Text="v0.2" HorizontalOptions="Center" FontSize="20" FontAttributes="Italic" TextColor="#FFD052" />
+        <Label Text="v0.3" HorizontalOptions="Center" FontSize="20" FontAttributes="Italic" TextColor="#FFD052" />
 
     </StackLayout>
 

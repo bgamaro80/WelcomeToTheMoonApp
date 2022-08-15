@@ -9,7 +9,7 @@ using WelcomeToTheMoonApp.ViewModels;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace WelcomeToTheMoonApp
+namespace WelcomeToTheMoonApp.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class GamePage : ContentPage
@@ -68,7 +68,12 @@ namespace WelcomeToTheMoonApp
             var accomplish = await DisplayAlert(objectiveCard.Text, completar, action, "Seguir jugando");
 
             if (accomplish)
+            {
                 mGameViewModel.AccomplishObjective(objectiveCard);
+
+                if(mGameViewModel.AllObjectiveAccomplished())
+                    await DisplayAlert(null, "Se han cumplido todos los objetivos, posible fin de partida.", "Ok");
+            }
         }
 
         protected volatile bool mOnNextRoundClick = false;

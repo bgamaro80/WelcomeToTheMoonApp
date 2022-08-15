@@ -1,4 +1,5 @@
 ﻿using System;
+using WelcomeToTheMoonApp.Views;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -12,6 +13,7 @@ namespace WelcomeToTheMoonApp
 
             MainPage = new MainPage();
             //MainPage = new GamePage() { ScenarioNumber = 5 };
+            //MainPage = new AstraGamePage();
         }
 
         protected override void OnStart()

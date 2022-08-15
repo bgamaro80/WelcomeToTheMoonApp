@@ -87,6 +87,9 @@ namespace WelcomeToTheMoonApp.ViewModels
             RefreshTurn();
         }
 
+        public bool AllObjectiveAccomplished() => ObjectiveA.IsAccomplished && ObjectiveB.IsAccomplished && ObjectiveC.IsAccomplished;
+
+
         protected virtual void OnPropertyChanged(string propertyName)
         {
             PropertyChangedEventHandler handler = PropertyChanged;
