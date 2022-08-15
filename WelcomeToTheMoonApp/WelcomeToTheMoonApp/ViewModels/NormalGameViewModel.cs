@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Linq;
 using System.Text;
 using WelcomeToTheMoon;
+using WelcomeToTheMoonApp.Cards;
 
 namespace WelcomeToTheMoonApp.ViewModels
 {
@@ -14,15 +16,25 @@ namespace WelcomeToTheMoonApp.ViewModels
 
         public int Round { get; set; }
 
+        public string AdventureTile => ActualState?.Scenario.GetAdventureTitle() ?? string.Empty;
+
         public Tuple<int, Symbol, Symbol> FirstCardInfo { get; set; }
         public Tuple<int, Symbol, Symbol> SecondCardInfo { get; set; }
         public Tuple<int, Symbol, Symbol> ThirdCardInfo { get; set; }
 
-        public void Init()
+
+
+        public ObjectiveCard ObjectiveA { get => ActualState.ObjectiveCards.First(o => o.Letter.StartsWith("A")); }
+        public ObjectiveCard ObjectiveB { get => ActualState.ObjectiveCards.First(o => o.Letter.StartsWith("B")); }
+        public ObjectiveCard ObjectiveC { get => ActualState.ObjectiveCards.First(o => o.Letter.StartsWith("C")); }
+
+        public void Init(Scenarios.Scenario scenario)
         {
             var initialState = new State
             {
-                Deck = new DeckNormalMode()
+                Scenario = scenario,
+                ObjectiveCards = CardObjectiveGenerator.GetCardsForGame(scenario.Number),
+                Deck = new DeckNormalMode(),
             };
             initialState.Deck.PrepareInitialState();
 
@@ -60,6 +72,19 @@ namespace WelcomeToTheMoonApp.ViewModels
             OnPropertyChanged(nameof(FirstCardInfo));
             OnPropertyChanged(nameof(SecondCardInfo));
             OnPropertyChanged(nameof(ThirdCardInfo));
+
+            OnPropertyChanged(nameof(ObjectiveA));
+            OnPropertyChanged(nameof(ObjectiveB));
+            OnPropertyChanged(nameof(ObjectiveC));
+        }
+
+        public void AccomplishObjective(ObjectiveCard objectiveCard)
+        {
+            StateMng.Next();
+            
+            objectiveCard.IsAccomplished = !objectiveCard.IsAccomplished;
+
+            RefreshTurn();
         }
 
         protected virtual void OnPropertyChanged(string propertyName)
@@ -72,13 +97,19 @@ namespace WelcomeToTheMoonApp.ViewModels
 
         private class State : IState
         {
+            public Scenarios.Scenario Scenario { get; set; }
             public DeckNormalMode Deck { get; set; }
+
+            public List<ObjectiveCard> ObjectiveCards { get; set; }
 
             public object Clone()
             {
                 State clone = (State)MemberwiseClone();
 
+                //Scenario no hace falta clonarlo
+
                 clone.Deck = (DeckNormalMode)Deck.Clone();
+                clone.ObjectiveCards = ObjectiveCards.Select(c => (ObjectiveCard)c.Clone()).ToList();
 
                 return clone;
             }

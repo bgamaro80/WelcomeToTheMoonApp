@@ -20,7 +20,7 @@
 
         <Button Text="Comenzar partida" HorizontalOptions="Center" Margin="40" Style="{StaticResource buttonStyle}" Clicked="StartButton_Clicked" />
 
-        <Label Text="v0.1" HorizontalOptions="Center" FontSize="20" FontAttributes="Italic" TextColor="#FFD052" />
+        <Label Text="v0.2" HorizontalOptions="Center" FontSize="20" FontAttributes="Italic" TextColor="#FFD052" />
 
     </StackLayout>
 

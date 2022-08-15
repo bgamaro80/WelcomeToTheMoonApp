@@ -11,6 +11,7 @@ namespace WelcomeToTheMoonApp
             InitializeComponent();
 
             MainPage = new MainPage();
+            //MainPage = new GamePage() { ScenarioNumber = 5 };
         }
 
         protected override void OnStart()

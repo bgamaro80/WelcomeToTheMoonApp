@@ -2,14 +2,17 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="WelcomeToTheMoonApp.GamePage"
-             xmlns:local="clr-namespace:WelcomeToTheMoonApp.Converters"
+             xmlns:viewModels="clr-namespace:WelcomeToTheMoonApp.ViewModels"
+             xmlns:conveters="clr-namespace:WelcomeToTheMoonApp.Converters"
+             x:DataType="viewModels:NormalGameViewModel"
              BackgroundColor="{StaticResource SecondColor}">
     <ContentPage.Resources>
         <ResourceDictionary>
-            <local:RoundToStringConverter x:Key="roundToStringConverter" />
-            <local:TupleCardNumberConveter x:Key="tupleCardNumberConveter" />
-            <local:TupleCardSymbolConveter x:Key="tupleCardSymbolConveter" />
-            <local:TupleNextCardSymbolConveter x:Key="tupleNextCardSymbolConveter" />
+            <conveters:RoundToStringConverter x:Key="roundToStringConverter" />
+            <conveters:TupleCardNumberConveter x:Key="tupleCardNumberConveter" />
+            <conveters:TupleCardSymbolConveter x:Key="tupleCardSymbolConveter" />
+            <conveters:TupleNextCardSymbolConveter x:Key="tupleNextCardSymbolConveter" />
+            <conveters:ObjectiveCardConverter x:Key="objectiveCardConverter" />
         </ResourceDictionary>
     </ContentPage.Resources>
     <ContentPage.Content>
@@ -19,28 +22,41 @@
                 <RowDefinition Height="Auto" />
                 <RowDefinition Height="*" />
                 <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
             </Grid.RowDefinitions>
 
             <Label Grid.Row="0"
-                   Text="RONDA"
-                   FontSize="48"
+                   Text="{Binding AdventureTile}"
+                   FontSize="32"
                    TextColor="{StaticResource FirstColor}"
-                   HorizontalOptions="Center"
-                   Margin="0,30,0,0"
+                   HorizontalOptions="Start"
+                   HorizontalTextAlignment="End"
+                   Margin="100,10,0,0"
+                   />
+            
+            <Label Grid.Row="0"
+                   Text="RONDA"
+                   FontSize="32"
+                   TextColor="{StaticResource FirstColor}"
+                   HorizontalOptions="End"
+                   HorizontalTextAlignment="End"
+                   Margin="0,10,100,0"
                    />
             <Label Grid.Row="1"
                    Text="{Binding Round, Converter={StaticResource roundToStringConverter}}"
-                   FontSize="72"
+                   FontSize="48"
                    TextColor="{StaticResource FirstColor}"
-                   HorizontalOptions="Center"
+                   HorizontalOptions="End"
+                   HorizontalTextAlignment="End"
+                   Margin="0,0,100,0"
                    TranslationY="-20"
                    />
 
+            <!--Exit button-->
             <Frame Grid.RowSpan="2"
                    HorizontalOptions="End"
                    VerticalOptions="Start"
                    BackgroundColor="Transparent"
-                   
                    >
                 <Frame.GestureRecognizers>
                     <TapGestureRecognizer Tapped="OnTapped"/>
@@ -52,7 +68,8 @@
                        />
             </Frame>
 
-            <Grid Grid.Row="2"
+            <Grid Grid.Row="1"
+                  Grid.RowSpan="2"
                   Margin="30,0">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*" />
@@ -128,15 +145,51 @@
 
             </Grid>
 
-            <Button Grid.Row="3" 
+            <StackLayout Grid.Row="3"
+                         Grid.RowSpan="2"
+                         Orientation="Horizontal"
+                         HorizontalOptions="Center"
+                         Spacing="20"
+                         Padding="0,0,0,8">
+
+                <Image Source="{Binding ObjectiveA, Converter={StaticResource objectiveCardConverter}}"
+                               HorizontalOptions="Center" VerticalOptions="Start"
+                               WidthRequest="160" 
+                               Margin="0,0,0,0"
+                               Aspect="AspectFit">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnTappedObjectiveA"/>
+                    </Image.GestureRecognizers>
+                </Image>
+                <Image Source="{Binding ObjectiveB, Converter={StaticResource objectiveCardConverter}}"
+                               HorizontalOptions="Center" VerticalOptions="Start"
+                               WidthRequest="160" 
+                               Margin="0,0,0,0"
+                               Aspect="AspectFit">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnTappedObjectiveB"/>
+                    </Image.GestureRecognizers>
+                </Image>
+                <Image Source="{Binding ObjectiveC, Converter={StaticResource objectiveCardConverter}}"
+                               HorizontalOptions="Center" VerticalOptions="Start"
+                               WidthRequest="160" 
+                               Margin="0,0,0,0"
+                               Aspect="AspectFit">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnTappedObjectiveC"/>
+                    </Image.GestureRecognizers>
+                </Image>
+            </StackLayout>
+
+            <Button Grid.Row="4" 
                     Text="Ronda anterior" 
-                    HorizontalOptions="Start" FontSize="36" Margin="48"
+                    HorizontalOptions="Start" FontSize="36" Margin="36,8,0,36"
                     Style="{StaticResource buttonStyle}"
                     Clicked="PreviousRound_Click"/>
 
-            <Button Grid.Row="3" 
+            <Button Grid.Row="4" 
                     Text="Ronda siguiente" 
-                    HorizontalOptions="End" FontSize="36" Margin="48"
+                    HorizontalOptions="End" FontSize="36" Margin="0,8,36,36"
                     Style="{StaticResource buttonStyle}"
                     Clicked="NextRound_Click"/>
 

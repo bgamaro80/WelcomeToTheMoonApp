@@ -16,6 +16,8 @@ namespace WelcomeToTheMoonApp
     {
         protected NormalGameViewModel mGameViewModel;
 
+        public Scenarios.Scenario Scenario { get; set; }
+
         public GamePage()
         {
             InitializeComponent();
@@ -26,7 +28,7 @@ namespace WelcomeToTheMoonApp
             base.OnAppearing();
 
             mGameViewModel = new NormalGameViewModel();
-            mGameViewModel.Init();
+            mGameViewModel.Init(Scenario);
             BindingContext = mGameViewModel;
         }
 
@@ -41,6 +43,32 @@ namespace WelcomeToTheMoonApp
 
             if (gameOver)
                 await Navigation.PopModalAsync();
+        }
+
+        protected async void OnTappedObjectiveA(object sender, EventArgs e)
+        {
+            await OnObjectiveTapped(mGameViewModel.ObjectiveA);
+        }
+
+        protected async void OnTappedObjectiveB(object sender, EventArgs e)
+        {
+            await OnObjectiveTapped(mGameViewModel.ObjectiveB);
+        }
+
+        protected async void OnTappedObjectiveC(object sender, EventArgs e)
+        {
+            await OnObjectiveTapped(mGameViewModel.ObjectiveC);
+        }
+
+        protected async Task OnObjectiveTapped(Cards.ObjectiveCard objectiveCard)
+        {
+            var completar = objectiveCard.IsAccomplished ? "¿Deshacer objetivo?" : "¿Completar objetivo?";
+            var action = objectiveCard.IsAccomplished ? "Deshacer" : "Completar";
+
+            var accomplish = await DisplayAlert(objectiveCard.Text, completar, action, "Seguir jugando");
+
+            if (accomplish)
+                mGameViewModel.AccomplishObjective(objectiveCard);
         }
 
         protected volatile bool mOnNextRoundClick = false;
@@ -70,7 +98,7 @@ namespace WelcomeToTheMoonApp
                 return;
 
             mOnNextRoundClick = true;
-         
+
             try
             {
                 var confirm = await DisplayAlert("Ronda anterior", "¿Retroceder una ronda?", "Sí", "Seguir jugando");
