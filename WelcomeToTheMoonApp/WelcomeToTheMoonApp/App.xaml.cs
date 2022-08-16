@@ -1,7 +1,7 @@
 ﻿using System;
+using Microsoft.Maui;
+using Microsoft.Maui.Controls;
 using WelcomeToTheMoonApp.Views;
-using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
 
 namespace WelcomeToTheMoonApp
 {
@@ -10,10 +10,15 @@ namespace WelcomeToTheMoonApp
         public App()
         {
             InitializeComponent();
+        }
 
-            MainPage = new MainPage();
-            //MainPage = new GamePage() { ScenarioNumber = 5 };
-            //MainPage = new AstraGamePage();
+        protected override Window CreateWindow(IActivationState activationState)
+        {
+            var mainPage = new MainPage();
+            //var mainPage = new GamePage() { ScenarioNumber = 5 };
+            //var mainPage = new AstraGamePage();
+
+            return new Microsoft.Maui.Controls.Window(mainPage) { Title = "Hola Moon" };
         }
 
         protected override void OnStart()

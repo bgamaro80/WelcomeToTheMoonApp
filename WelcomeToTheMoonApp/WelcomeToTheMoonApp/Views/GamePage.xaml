@@ -1,11 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="WelcomeToTheMoonApp.Views.GamePage"
              xmlns:viewModels="clr-namespace:WelcomeToTheMoonApp.ViewModels"
              xmlns:conveters="clr-namespace:WelcomeToTheMoonApp.Converters"
              x:DataType="viewModels:NormalGameViewModel"
-             BackgroundColor="{StaticResource SecondColor}">
+             BackgroundColor="{StaticResource SecondColor}"
+             Padding="0,24,0,0">
     <ContentPage.Resources>
         <ResourceDictionary>
             <conveters:RoundToStringConverter x:Key="roundToStringConverter" />
@@ -30,26 +31,26 @@
                    FontSize="32"
                    TextColor="{StaticResource FirstColor}"
                    HorizontalOptions="Start"
-                   HorizontalTextAlignment="End"
-                   Margin="100,10,0,0"
+                   HorizontalTextAlignment="Start"
+                   Margin="16,10,0,0"
                    />
             
             <Label Grid.Row="0"
                    Text="RONDA"
                    FontSize="32"
                    TextColor="{StaticResource FirstColor}"
-                   HorizontalOptions="End"
-                   HorizontalTextAlignment="End"
-                   Margin="0,10,100,0"
+                   HorizontalOptions="Center"
+                   HorizontalTextAlignment="Center"
+                   Margin="0,8,0,0"
                    />
             <Label Grid.Row="1"
                    Text="{Binding Round, Converter={StaticResource roundToStringConverter}}"
-                   FontSize="48"
+                   FontSize="42"
                    TextColor="{StaticResource FirstColor}"
-                   HorizontalOptions="End"
-                   HorizontalTextAlignment="End"
-                   Margin="0,0,100,0"
-                   TranslationY="-20"
+                   HorizontalOptions="Center"
+                   HorizontalTextAlignment="Center"
+                   VerticalOptions="Start"
+                   VerticalTextAlignment="Start"
                    />
 
             <!--Exit button-->
@@ -57,14 +58,16 @@
                    HorizontalOptions="End"
                    VerticalOptions="Start"
                    BackgroundColor="Transparent"
+                   Padding="16,8,16,8"
                    >
                 <Frame.GestureRecognizers>
                     <TapGestureRecognizer Tapped="OnTapped"/>
                 </Frame.GestureRecognizers>
-                <Label Text="&#xea0f;"
+                <Label Text="Finalizar"
+                       VerticalTextAlignment="Start"
+                       VerticalOptions="Start"
                        FontSize="24"
                        TextColor="{StaticResource FirstColor}"
-                       FontFamily="moonapp"    
                        />
             </Frame>
 
@@ -183,13 +186,17 @@
 
             <Button Grid.Row="4" 
                     Text="Ronda anterior" 
-                    HorizontalOptions="Start" FontSize="36" Margin="36,8,0,36"
+                    HorizontalOptions="Start" 
+                    VerticalOptions="End"
+                    FontSize="36" Margin="36,3,0,36"
                     Style="{StaticResource buttonStyle}"
                     Clicked="PreviousRound_Click"/>
 
             <Button Grid.Row="4" 
                     Text="Ronda siguiente" 
-                    HorizontalOptions="End" FontSize="36" Margin="0,8,36,36"
+                    HorizontalOptions="End" 
+                    VerticalOptions="End"
+                    FontSize="36" Margin="0,8,36,36"
                     Style="{StaticResource buttonStyle}"
                     Clicked="NextRound_Click"/>
 
