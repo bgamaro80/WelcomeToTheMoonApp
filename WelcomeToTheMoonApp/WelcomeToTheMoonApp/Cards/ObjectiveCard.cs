@@ -26,16 +26,16 @@ namespace WelcomeToTheMoonApp.Cards
         public bool IsAccomplished { get; set; } = false;
 
         /// <summary>
-        /// obj_{N}{L|LL}_f.png
+        /// obj_{N}{L|LL}_f
         /// obj_5A_b.png
         /// </summary>
-        public string ImageFront => $"obj_{ScenarioNumber}{Letter}_f.png";
+        public string ImageFront => $"obj_{ScenarioNumber}{Letter}_f";
 
         /// <summary>
-        /// obj_{N}{L|LL}_b.png
+        /// obj_{N}{L|LL}_b
         /// obj_5A_b.png
         /// </summary>
-        public string ImageBack => $"obj_{ScenarioNumber}{Letter}_b.png";
+        public string ImageBack => $"obj_{ScenarioNumber}{Letter}_b";
 
         public object Clone()
         {

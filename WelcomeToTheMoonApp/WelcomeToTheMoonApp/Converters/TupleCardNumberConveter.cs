@@ -14,7 +14,7 @@ namespace WelcomeToTheMoonApp.Converters
         {
             var tupleCard = (Tuple<int, Symbol, Symbol>)value;
 
-            return $"c{tupleCard.Item1}.png";
+            return $"c{tupleCard.Item1}";
         }
 
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
