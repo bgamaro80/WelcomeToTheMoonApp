@@ -155,33 +155,40 @@
                          Spacing="20"
                          Padding="0,0,0,8">
 
-                <Image Source="{Binding ObjectiveA, Converter={StaticResource objectiveCardConverter}}"
-                               HorizontalOptions="Center" VerticalOptions="Start"
-                               WidthRequest="160" 
-                               Margin="0,0,0,0"
-                               Aspect="AspectFit">
-                    <Image.GestureRecognizers>
-                        <TapGestureRecognizer Tapped="OnTappedObjectiveA"/>
-                    </Image.GestureRecognizers>
-                </Image>
-                <Image Source="{Binding ObjectiveB, Converter={StaticResource objectiveCardConverter}}"
-                               HorizontalOptions="Center" VerticalOptions="Start"
-                               WidthRequest="160" 
-                               Margin="0,0,0,0"
-                               Aspect="AspectFit">
-                    <Image.GestureRecognizers>
-                        <TapGestureRecognizer Tapped="OnTappedObjectiveB"/>
-                    </Image.GestureRecognizers>
-                </Image>
-                <Image Source="{Binding ObjectiveC, Converter={StaticResource objectiveCardConverter}}"
-                               HorizontalOptions="Center" VerticalOptions="Start"
-                               WidthRequest="160" 
-                               Margin="0,0,0,0"
-                               Aspect="AspectFit">
-                    <Image.GestureRecognizers>
-                        <TapGestureRecognizer Tapped="OnTappedObjectiveC"/>
-                    </Image.GestureRecognizers>
-                </Image>
+                <Frame Style="{StaticResource objCardFrameStyle}">
+                    <Image Source="{Binding ObjectiveA, Converter={StaticResource objectiveCardConverter}}"
+                                   HorizontalOptions="Center" VerticalOptions="Start"
+                                   WidthRequest="160" 
+                                   Margin="0,0,0,0"
+                                   Aspect="AspectFit">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnTappedObjectiveA"/>
+                        </Image.GestureRecognizers>
+                    </Image>
+                </Frame>
+                <Frame Style="{StaticResource objCardFrameStyle}">
+                    <Image Source="{Binding ObjectiveB, Converter={StaticResource objectiveCardConverter}}"
+                                   HorizontalOptions="Center" VerticalOptions="Start"
+                                   WidthRequest="160" 
+                                   Margin="0,0,0,0"
+                                   Aspect="AspectFit"
+                                   >
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnTappedObjectiveB"/>
+                        </Image.GestureRecognizers>
+                    </Image>
+                </Frame>
+                <Frame Style="{StaticResource objCardFrameStyle}">
+                    <Image Source="{Binding ObjectiveC, Converter={StaticResource objectiveCardConverter}}"
+                                   HorizontalOptions="Center" VerticalOptions="Start"
+                                   WidthRequest="160" 
+                                   Margin="0,0,0,0"
+                                   Aspect="AspectFit">
+                        <Image.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="OnTappedObjectiveC"/>
+                        </Image.GestureRecognizers>
+                    </Image>
+                </Frame>
             </StackLayout>
 
             <Button Grid.Row="4" 
