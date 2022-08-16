@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.2.32630.192
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WelcomeToTheMoonApp.Android", "WelcomeToTheMoonApp\WelcomeToTheMoonApp.Android\WelcomeToTheMoonApp.Android.csproj", "{20995CA1-50B0-4404-BA4C-6FFFCC4BDFCC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WelcomeToTheMoonApp.Droid", "WelcomeToTheMoonApp\WelcomeToTheMoonApp.Android\WelcomeToTheMoonApp.Droid.csproj", "{20995CA1-50B0-4404-BA4C-6FFFCC4BDFCC}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WelcomeToTheMoonApp", "WelcomeToTheMoonApp\WelcomeToTheMoonApp\WelcomeToTheMoonApp.csproj", "{43EBBEE8-EFC9-4D80-8678-69817009F277}"
 EndProject

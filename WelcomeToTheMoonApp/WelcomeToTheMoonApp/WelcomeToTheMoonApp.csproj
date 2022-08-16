@@ -1,4 +1,25 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
+	<PropertyGroup>
+		<TargetFrameworks>net6.0-ios;net6.0-android</TargetFrameworks>
+		<!--<ProduceReferenceAssembly>true</ProduceReferenceAssembly>-->
+		<UseMaui>True</UseMaui>
+		<OutputType>Library</OutputType>
+		<ImplicitUsings>enable</ImplicitUsings>
+
+		<!-- Required for C# Hot Reload -->
+		<UseInterpreter Condition="'$(Configuration)' == 'Debug'">True</UseInterpreter>
+
+		<ApplicationId>com.benito.welcometothemoonappjpg</ApplicationId>
+
+		<SupportedOSPlatformVersion Condition="'$(TargetFramework)' == 'net6.0-ios'">15.4</SupportedOSPlatformVersion>
+		<SupportedOSPlatformVersion Condition="'$(TargetFramework)' == 'net6.0-android'">31.0</SupportedOSPlatformVersion>
+
+	</PropertyGroup>
+
+</Project>
+
+<!--
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
@@ -32,3 +53,4 @@
     </EmbeddedResource>
   </ItemGroup>
 </Project>
+-->
