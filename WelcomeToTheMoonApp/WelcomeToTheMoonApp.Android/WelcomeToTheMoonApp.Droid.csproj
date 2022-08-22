@@ -9,6 +9,9 @@
 	<PropertyGroup>
 		<UseInterpreter Condition="$(TargetFramework.Contains('-android'))">True</UseInterpreter>
 	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+	  <AndroidPackageFormat>apk</AndroidPackageFormat>
+	</PropertyGroup>
 	<ItemGroup>
 		<AndroidResource Include="Resources\values\styles.xml" />
 		<AndroidResource Include="Resources\values\colors.xml" />
